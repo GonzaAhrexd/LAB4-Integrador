@@ -19,6 +19,35 @@
         <div class="text-bold">
             TAREAS
         </div>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Crear Tarea de Contacto</h1>
+            <form action="{{ url('/tareas') }}" method="POST">
+                @csrf <!-- Token de seguridad obligatorio en Laravel -->
+                <input type="hidden" name="tipo" value="contacto">
+                
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa el nombre" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="razon" class="form-label">Razón para contactar</label>
+                    <input type="text" class="form-control" id="razon" name="razon" placeholder="Motivo para contactar" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+            </form>
+        </div>
 
         <button class="btn btn-danger rounded-circle" style="width: 50px; height: 50px; position: fixed; bottom: 20px; right: 20px;">
             +
