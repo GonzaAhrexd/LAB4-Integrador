@@ -9,7 +9,6 @@ class CreateContactosTable extends Migration
     {
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tarea_id')->constrained()->onDelete('cascade');
             $table->string('nombre');
             $table->string('razon');
             $table->string('telefono');
